@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Button, Form} from "react-bootstrap";
 
 type LoginSuccessMessage = 'SUCCESS'
 type LoginFailMessage = 'FAIL'
@@ -78,18 +79,27 @@ const LoginWithMockAPI = () => {
     <h1>
       Login with Mock API
     </h1>
+
+    <br />
+
     <form onSubmit={loginSubmitHandler}>
       {/* TODO: 여기에 username과 password를 입력하는 input을 추가하세요. 제출을 위해 button도 추가하세요. */}
-      <label>
-        Username:
-        <input type="text" name="username" />
-      </label>
-      <label>
-        Password:
-        <input type="password" name="password" />
-      </label>
-      <button type="submit" value="Submit">submit</button>
+
+      <Form.Label>Username</Form.Label>
+      <Form.Control type="text" name="username" />
+      <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+      <Form.Control
+          type="password"
+          id="inputPassword5"
+          aria-describedby="passwordHelpBlock"
+          name="password"
+      />
+      <Button variant="dark" type="submit" value="Submit" size="lg">submit</Button>
     </form>
+
+    <br />
+    <br />
+
     <div>
       <h2>
         User info
